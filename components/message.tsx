@@ -24,13 +24,12 @@ function GalleryItem({
 
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.85, 1.05, 0.85]);
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.5, 1, 0.5]);
-  const zIndex = useTransform(scrollYProgress, [0, 0.5, 1], [1, 20, 1]);
 
   return (
     <motion.div
       ref={ref}
-      style={{ scale, opacity, zIndex: zIndex as unknown as number }}
-      className={`relative overflow-hidden rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.5)] border border-primary/40 bg-black backdrop-blur-sm group ${className}`}
+      style={{ scale, opacity, willChange: "transform, opacity" }}
+      className={`relative overflow-hidden rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.5)] border border-primary/40 bg-black group hover:z-30 transition-[z-index] ${className}`}
     >
       {/* Dark overlay that fades away on hover for an interactive feel */}
       <div className="absolute inset-0 bg-black/30 group-hover:bg-black/0 transition-colors duration-500 z-10" />
@@ -39,6 +38,7 @@ function GalleryItem({
         src={src}
         alt={`Gallery Image ${index + 1}`}
         fill
+        sizes="(max-width: 768px) 100vw, 50vw"
         className="object-cover transition-transform duration-700 group-hover:scale-110"
       />
     </motion.div>

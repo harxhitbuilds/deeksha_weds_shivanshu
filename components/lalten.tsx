@@ -77,11 +77,11 @@ export default function Lalten() {
   return (
     <div
       className="absolute inset-0 pointer-events-none overflow-hidden z-20"
-      style={{ height: "300vh" }}
+      style={{ height: isMobile ? "100%" : "300vh" }}
     >
       <motion.div
-        className="relative w-full h-[200vh]"
-        style={{ y: parallaxY }}
+        className="relative w-full"
+        style={{ y: parallaxY, height: isMobile ? "100%" : "200vh" }}
       >
         {laltens.map((lalten) => (
           <motion.div
