@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Invite() {
   return (
-    <div className="flex flex-col items-center justify-center text-center space-y-4 md:space-y-6 lg:space-y-8 text-black drop-shadow-sm px-4 w-full pt-12 md:pt-0">
+    <div className="flex flex-col items-center justify-center text-center space-y-4 md:space-y-6 lg:space-y-8 text-black drop-shadow-sm px-4 w-full pt-12 md:pt-0 z-20">
       <div className="relative mb-2 md:mb-4 flex justify-center items-center">
         <Image
           src="/assets/ganesh.png"
@@ -18,17 +18,18 @@ export default function Invite() {
 
       <div className="flex flex-col items-center space-y-1">
         <p className="text-xs md:text-base lg:text-lg tracking-widest text-white/90 uppercase">
-          With the heavenly blessings of
+          ॐ भूर्भुवः स्वः
+          तत्सवितुर्वरेण्यं
+          भर्गो देवस्य धीमहि
+          धियो यो नः प्रचोदयात्॥
         </p>
-        <p className="text-base md:text-xl lg:text-2xl font-medium text-white">
-          Smt. Lata Devi & Sm. Kamal Kapoor
-        </p>
+
       </div>
 
       <div className="w-16 md:w-24 h-px bg-orange-400 my-4 opacity-60"></div>
 
       <p className="text-base md:text-xl lg:text-2xl font-medium text-white">
-        Mrs. Reena & Mr. Rajiv Kapoor
+        Mrs. Meena & Mr. Girdhari Lal
       </p>
 
       <h2 className="text-xl md:text-4xl lg:text-5xl font-serif tracking-[0.2em] md:tracking-[0.3em] uppercase py-2 md:py-4 text-white">
@@ -40,19 +41,19 @@ export default function Invite() {
       </p>
 
       <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif italic py-2 md:py-4 text-white leading-tight">
-        Abhishek
+        Deeksha
         <span className="block text-3xl md:text-5xl lg:text-6xl my-2 not-italic text-pink-500 drop-shadow-md">
           &
         </span>
-        Kanika
+        Shivanshu
       </h1>
 
       <div className="flex flex-col space-y-1 md:space-y-2 text-white pt-2 md:pt-4">
         <p className="text-xs md:text-base lg:text-lg italic text-white/80">
-          Daughter of
+          Son of
         </p>
         <p className="text-sm md:text-lg lg:text-xl font-medium text-white">
-          Mrs. Shalini & Mr. Aakash Mittal,
+          Mrs. Sudha & Mr. Shivnarayan ,
         </p>
       </div>
 

@@ -3,47 +3,43 @@
 import { useRef } from "react";
 import Container from "./container";
 import Image from "next/image";
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 function GalleryItem({
   src,
   index,
-  total,
-  scrollYProgress,
   className,
 }: {
   src: string;
   index: number;
-  total: number;
-  scrollYProgress: MotionValue<number>;
   className?: string;
 }) {
-  const peak = index / (total - 1);
-  const start = peak - 0.25;
-  const end = peak + 0.25;
+  const ref = useRef<HTMLDivElement>(null);
 
-  const scale = useTransform(
-    scrollYProgress,
-    [start, peak, end],
-    [0.85, 1.45, 0.85],
-  );
-  const opacity = useTransform(
-    scrollYProgress,
-    [start, peak, end],
-    [0.3, 1, 0.3],
-  );
-  const zIndex = useTransform(scrollYProgress, [start, peak, end], [1, 30, 1]);
+  // Track scroll exactly for this individual image element
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start 95%", "center center", "end 5%"], // scales up as it reaches the center of the viewport
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.85, 1.05, 0.85]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.5, 1, 0.5]);
+  const zIndex = useTransform(scrollYProgress, [0, 0.5, 1], [1, 20, 1]);
 
   return (
     <motion.div
+      ref={ref}
       style={{ scale, opacity, zIndex: zIndex as unknown as number }}
-      className={`relative overflow-hidden rounded-xl shadow-xl border border-[#d4af37]/30 bg-black/50 backdrop-blur-sm ${className}`}
+      className={`relative overflow-hidden rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.5)] border border-primary/40 bg-black backdrop-blur-sm group ${className}`}
     >
+      {/* Dark overlay that fades away on hover for an interactive feel */}
+      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/0 transition-colors duration-500 z-10" />
+
       <Image
         src={src}
         alt={`Gallery Image ${index + 1}`}
         fill
-        className="object-cover"
+        className="object-cover transition-transform duration-700 group-hover:scale-110"
       />
     </motion.div>
   );
@@ -51,14 +47,10 @@ function GalleryItem({
 
 export default function Message() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
 
   const galleryItems = [
-    { src: "/assets/one.jpeg", className: "col-span-2 row-span-2" },
-    { src: "/assets/two.jpeg", className: "col-span-1 row-span-1" },
+    { src: "/assets/two.jpeg", className: "col-span-2 row-span-2" },
+    { src: "/assets/one.jpeg", className: "col-span-1 row-span-1" },
     { src: "/assets/three.jpeg", className: "col-span-1 row-span-2" },
     { src: "/assets/four.jpeg", className: "col-span-1 row-span-1" },
     { src: "/assets/five.jpeg", className: "col-span-2 row-span-1" },
@@ -94,11 +86,11 @@ export default function Message() {
             <p className="text-sm md:text-lg lg:text-xl mb-6 md:mb-12 leading-relaxed md:leading-loose drop-shadow-md text-gray-200 font-sans tracking-wide px-2 md:px-10">
               We are both so delighted that you are able to join us in
               celebrating what we hope will be one of the happiest days of our
-              lives. The affection shown to us by so many people since our roka
+              lives. The affection shown to us by so many people
               has been incredibly moving, and has touched us both deeply. We
               would like to take this opportunity to thank everyone most
               sincerely for their kindness. We are looking forward to see you at
-              the wedding.
+              the wedding.❤️
             </p>
           </motion.div>
 
@@ -112,8 +104,6 @@ export default function Message() {
                   key={index}
                   src={item.src}
                   index={index}
-                  total={galleryItems.length}
-                  scrollYProgress={scrollYProgress}
                   className={item.className}
                 />
               ))}
@@ -134,7 +124,7 @@ export default function Message() {
             }}
             className="flex flex-wrap justify-center mt-8 md:mt-24 px-4 pb-12 w-full"
           >
-            {"Looking forward to see you".split(" ").map((word, index) => (
+            {"Looking forward to seeing you".split(" ").map((word, index) => (
               <motion.h3
                 key={index}
                 variants={{
@@ -145,7 +135,7 @@ export default function Message() {
                     transition: { duration: 0.6, ease: "easeOut" },
                   },
                 }}
-                className="relative z-10 text-3xl md:text-5xl lg:text-6xl font-[--font-script] text-secondary drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] text-center mr-3 last:mr-0 mt-8"
+                className="relative z-10 text-3xl md:text-5xl lg:text-5xl tracking-wider font-serif text-secondary drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] text-center mr-3 last:mr-0 mt-8"
               >
                 {word}
               </motion.h3>

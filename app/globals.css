@@ -28,3 +28,8 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
 }
+
+.font-script,
+.font-great-vibes {
+  font-family: var(--font-great-vibes), cursive;
+}

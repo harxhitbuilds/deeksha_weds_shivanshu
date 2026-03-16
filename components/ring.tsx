@@ -12,16 +12,16 @@ export default function Ring() {
           height={0}
           sizes="100vw"
           style={{ width: "100%", height: "auto" }}
-          className="object-contain opacity-80"
+          className="object-contain opacity-80 z-40"
         />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif italic text-white/90 drop-shadow-md">
-            Abhishek
+            Deeksha
             <span className="block text-3xl md:text-5xl lg:text-6xl my-4">
               &
             </span>
-            Kanika
+            Shivanshu
           </h1>
         </div>
       </div>

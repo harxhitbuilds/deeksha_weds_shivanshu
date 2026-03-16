@@ -49,22 +49,22 @@ export default function Roadmap() {
 
   const events: EventCheckpoint[] = [
     {
-      functionName: "Haldi",
-      date: "12th April",
+      functionName: "Sangeet",
+      date: "19th April",
       time: "10:00 AM",
-      place: "The Grand Palace",
+      place: "Madhuvan Garden, Maihar",
     },
     {
       functionName: "Mehendi",
-      date: "12th April",
-      time: "4:00 PM",
-      place: "The Grand Palace",
+      date: "20th April",
+      time: "8:00 AM",
+      place: "Madhuvan Garden, Maihar",
     },
     {
-      functionName: "Sangeet",
-      date: "13th April",
-      time: "7:00 PM",
-      place: "Royal Gardens",
+      functionName: "Baraat & Varmala",
+      date: "20th April",
+      time: "8:00 PM",
+      place: "Madhuvan Garden, Maihar",
     },
   ];
 
@@ -150,31 +150,37 @@ export default function Roadmap() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.8, y: 50 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true, margin: "0px 0px -20% 0px" }}
+                viewport={{ once: false, margin: "0px 0px -20% 0px" }}
                 transition={{ duration: 0.6, type: "spring", bounce: 0.3 }}
-                className={`w-[90%] md:w-[45%] bg-[#fffdf9]/95 backdrop-blur-md p-4 md:p-8 shadow-2xl relative group ${isLeft
-                    ? "mr-auto text-left md:text-center"
-                    : "ml-auto text-right md:text-center"
+                className={`w-[65%] sm:w-[55%] md:w-[42%] bg-gradient-to-br from-[#ffffff]/95 to-[#fdfbf2]/95 backdrop-blur-xl p-4 md:p-8 shadow-[0_8px_30px_rgba(212,175,55,0.15)] md:shadow-[0_15px_40px_rgba(212,175,55,0.2)] relative group text-center ${isLeft ? "mr-auto" : "ml-auto"
                   }`}
                 style={{
-                  border: "1px solid #d4af37",
-                  borderRadius: "16px 2px 16px 2px",
+                  border: "1px solid rgba(212,175,55,0.4)",
+                  borderRadius: "12px",
                 }}
               >
-                {/* Decorative border corners */}
-                <div className="absolute top-1 md:top-2 left-1 md:left-2 w-4 md:w-6 h-4 md:h-6 border-t border-l border-primary opacity-60"></div>
-                <div className="absolute bottom-1 md:bottom-2 right-1 md:right-2 w-4 md:w-6 h-4 md:h-6 border-b border-r border-primary opacity-60"></div>
+                {/* Decorative inner border */}
+                <div className="absolute inset-1.5 md:inset-2 border border-[#d4af37]/30 rounded-[8px] pointer-events-none text-center" />
 
-                <h3 className="text-lg md:text-3xl lg:text-4xl text-[#8b5e34] mb-1 md:mb-3 tracking-wide">
+                {/* Decorative gold aesthetic corners */}
+                <div className="absolute top-0 left-0 w-6 md:w-8 h-6 md:h-8 border-t-[2px] border-l-[2px] border-primary opacity-80 rounded-tl-[12px]" />
+                <div className="absolute bottom-0 right-0 w-6 md:w-8 h-6 md:h-8 border-b-[2px] border-r-[2px] border-primary opacity-80 rounded-br-[12px]" />
+                <div className="absolute top-0 right-0 w-6 md:w-8 h-6 md:h-8 border-t-[2px] border-r-[2px] border-primary opacity-80 rounded-tr-[12px]" />
+                <div className="absolute bottom-0 left-0 w-6 md:w-8 h-6 md:h-8 border-b-[2px] border-l-[2px] border-primary opacity-80 rounded-bl-[12px]" />
+
+                <h3 className="text-2xl md:text-4xl lg:text-5xl font-script text-[#8b5e34] drop-shadow-sm mb-1 md:mb-3">
                   {event.functionName}
                 </h3>
-                <div className="w-8 md:w-16 h-px bg-primary mx-auto mb-2 md:mb-4 opacity-70" />
-                <div className="text-[10px] md:text-base lg:text-lg text-[#5a5a5a] space-y-0.5 md:space-y-1 font-sans font-light">
+
+                {/* Line separator */}
+                <div className="w-16 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-2 md:mb-4 opacity-80" />
+
+                <div className="text-[11px] md:text-base lg:text-lg text-[#5a5a5a] space-y-0.5 md:space-y-1 font-sans font-light">
                   <p className="uppercase tracking-widest md:tracking-[0.15em] text-[#8b5e34] font-medium">
                     {event.date}
                   </p>
-                  <p className="tracking-widest opacity-80">{event.time}</p>
-                  <p className="pt-2 italic font-serif text-[#6b6b6b]">
+                  <p className="tracking-widest opacity-80 text-xs md:text-base">{event.time}</p>
+                  <p className="pt-2 md:pt-3 italic font-serif text-[#6b6b6b] leading-tight">
                     {event.place}
                   </p>
                 </div>
