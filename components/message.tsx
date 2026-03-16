@@ -68,35 +68,30 @@ export default function Message() {
 
   return (
     <Container>
-      <div className="relative w-full flex items-center justify-center  overflow-hidden shadow-2xl ">
+      <div className="relative w-full flex items-center justify-center overflow-hidden shadow-2xl min-h-screen">
         <Image
           src="/assets/message.png"
           alt="background"
-          width={0}
-          height={0}
+          fill
           sizes="100vw"
-          style={{
-            width: "100%",
-            height: "auto",
-            minHeight: "900px",
-            objectFit: "cover",
-          }}
+          className="object-cover"
+          priority
         />
 
         {/* Overlay Content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-start py-12 md:py-20 text-center text-white bg-linear-to-b from-black/60 via-black/40 to-black/80 overflow-y-auto custom-scrollbar">
+        <div className="relative z-10 flex flex-col items-center justify-start py-12 md:py-20 text-center text-white bg-linear-to-b from-black/70 via-black/50 to-black/80 w-full min-h-screen">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col items-center max-w-4xl px-6"
+            className="flex flex-col items-center max-w-4xl px-4 md:px-8 mt-10 md:mt-0"
           >
-            <h2 className="text-2xl md:text-4xl font-serif mb-6 text-[#f3e5ab] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] tracking-wide">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif mb-6 text-secondary drop-shadow-lg tracking-wide mt-4 md:mt-0">
               A Message from the Couple
             </h2>
-            <div className="w-24 h-px bg-[#d4af37] mb-8 opacity-70"></div>
-            <p className="text-sm md:text-lg mb-12 leading-loose drop-shadow-md text-gray-100 font-light tracking-wide">
+            <div className="w-32 h-px bg-primary mb-8 opacity-80"></div>
+            <p className="text-sm md:text-lg lg:text-xl mb-6 md:mb-12 leading-relaxed md:leading-loose drop-shadow-md text-gray-200 font-sans tracking-wide px-2 md:px-10">
               We are both so delighted that you are able to join us in
               celebrating what we hope will be one of the happiest days of our
               lives. The affection shown to us by so many people since our roka
@@ -109,9 +104,9 @@ export default function Message() {
 
           <div
             ref={containerRef}
-            className="w-full max-w-5xl mx-auto px-4 pb-10 mt-24"
+            className="w-full max-w-5xl mx-auto px-4 pb-10 mt-12 md:mt-24"
           >
-            <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[130px] md:auto-rows-[200px] gap-3 md:gap-4 w-full grid-flow-dense">
+            <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[120px] md:auto-rows-[220px] lg:auto-rows-[250px] gap-2 md:gap-4 w-full grid-flow-dense mt-6 md:mt-10">
               {galleryItems.map((item, index) => (
                 <GalleryItem
                   key={index}
@@ -137,7 +132,7 @@ export default function Message() {
                 },
               },
             }}
-            className="flex flex-wrap justify-center mt-24 px-4"
+            className="flex flex-wrap justify-center mt-8 md:mt-24 px-4 pb-12 w-full"
           >
             {"Looking forward to see you".split(" ").map((word, index) => (
               <motion.h3
@@ -150,7 +145,7 @@ export default function Message() {
                     transition: { duration: 0.6, ease: "easeOut" },
                   },
                 }}
-                className="relative z-10 text-2xl md:text-4xl lg:text-5xl font-serif italic text-[#f3e5ab] drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] text-center mr-3 last:mr-0"
+                className="relative z-10 text-3xl md:text-5xl lg:text-6xl font-[--font-script] text-secondary drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] text-center mr-3 last:mr-0 mt-8"
               >
                 {word}
               </motion.h3>

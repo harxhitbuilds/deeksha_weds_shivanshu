@@ -42,26 +42,46 @@ export default function Footer() {
 
   return (
     <Container>
-      <div className="relative w-full">
+      <div className="relative w-full flex items-center justify-center min-h-[50vh] md:min-h-0 bg-black">
         <Image
           src="/assets/footer.png"
           alt="logo"
-          width={0}
-          height={0}
+          fill
           sizes="100vw"
-          style={{ width: "100%", height: "auto" }}
-          className="object-contain opacity-80"
+          className="object-cover opacity-60"
         />
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center  space-y-6">
-          <h2 className="text-3xl font-semibold">The countdown begins</h2>
+        <div className="relative z-10 flex flex-col items-center justify-center text-center space-y-6 md:space-y-8 py-16 text-white w-full h-full">
+          <h2 className="text-2xl md:text-5xl font-serif text-secondary tracking-widest uppercase drop-shadow-md">
+            The countdown begins
+          </h2>
 
-          <div className="text-5xl font-mono font-bold tracking-widest">
-            {formatTime(timeLeft.days)}:{formatTime(timeLeft.hours)}:
-            {formatTime(timeLeft.minutes)}:{formatTime(timeLeft.seconds)}
+          <div className="w-16 md:w-24 h-px bg-primary opacity-80 mt-2 mb-4"></div>
+
+          <div className="text-3xl md:text-7xl lg:text-8xl font-serif font-light tracking-widest md:tracking-[0.2em] text-white flex items-center justify-center">
+            <span className="inline-block px-1 md:px-2">{formatTime(timeLeft.days)}</span>
+            <span className="text-primary text-xl md:text-5xl lg:text-6xl mx-1 md:mx-2">
+              :
+            </span>
+            <span className="inline-block px-1 md:px-2">{formatTime(timeLeft.hours)}</span>
+            <span className="text-primary text-xl md:text-5xl lg:text-6xl mx-1 md:mx-2">
+              :
+            </span>
+            <span className="inline-block px-1 md:px-2">{formatTime(timeLeft.minutes)}</span>
+            <span className="text-primary text-xl md:text-5xl lg:text-6xl mx-1 md:mx-2">
+              :
+            </span>
+            <span className="inline-block px-1 md:px-2">{formatTime(timeLeft.seconds)}</span>
           </div>
 
-          <p className="max-w-2xl text-lg text-muted-foreground px-4">
+          <div className="flex justify-center gap-12 md:gap-28 lg:gap-36 text-[0.6rem] md:text-sm uppercase tracking-[0.2em] text-white/70 mt-2">
+            <span>Days</span>
+            <span>Hours</span>
+            <span>Mins</span>
+            <span>Secs</span>
+          </div>
+
+          <p className="max-w-xs md:max-w-3xl text-sm md:text-lg text-gray-200 mt-8 px-4 font-sans leading-relaxed tracking-wide">
             Our families are excited that you are able to join us in celebrating
             what we hope will be one of the happiest days of our lives.
           </p>

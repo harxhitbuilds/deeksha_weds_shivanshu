@@ -23,9 +23,8 @@ export default function Hero() {
           height={0}
           sizes="100vw"
           style={{ width: "100%", height: "auto" }}
-          className={`object-cover transition-opacity duration-1000 ${
-            imageLoaded ? "opacity-80" : "opacity-0"
-          }`}
+          className={`object-cover transition-opacity duration-1000 ${imageLoaded ? "opacity-80" : "opacity-0"
+            }`}
           onLoad={() => setImageLoaded(true)}
           priority
         />
@@ -37,11 +36,11 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
-              className="absolute inset-x-0 bottom-12 flex flex-col items-center justify-end space-y-12 pb-34"
+              className="absolute inset-x-0 bottom-0 md:bottom-12 flex flex-col items-center justify-end space-y-8 md:space-y-12 pb-10 md:pb-32"
             >
               <Invite />
               {/* Added animated Roadmap component instead of the frame grid */}
-              <div className="max-w-5xl mx-auto px-4 w-full mt-10">
+              <div className="max-w-5xl mx-auto px-4 w-full mt-4 md:mt-10">
                 <Roadmap />
               </div>
             </motion.div>
