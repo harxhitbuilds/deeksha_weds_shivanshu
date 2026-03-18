@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Great_Vibes, Montserrat } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/provider/lenis.provider";
+import AudioPlayer from "@/components/audio-player";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -56,7 +57,10 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${greatVibes.variable} ${montserrat.variable} antialiased bg-white`}
       >
-        <SmoothScroll>{children}</SmoothScroll>
+        <SmoothScroll>
+          <AudioPlayer />
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );
