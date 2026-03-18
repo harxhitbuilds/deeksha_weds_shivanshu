@@ -54,7 +54,7 @@ export default function Hero() {
                   className="text-3xl md:text-5xl lg:text-6xl font-script  text-white  uppercase drop-shadow-2xl text-center px-4 mt-34  decoration-secondary/80 underline-offset-8 hidden md:flex"
                   style={{ textShadow: "0 4px 12px rgba(0,0,0,0.5)" }}
                 >
-                  Save the Date
+                  Unveil the Celebration
                 </motion.h2>
               </motion.div>
 

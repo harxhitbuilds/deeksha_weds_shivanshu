@@ -49,33 +49,40 @@ export default function Roadmap() {
 
   const events: EventCheckpoint[] = [
     {
+      functionName: "Tilak",
+      date: "19th April",
+      time: "10:00 AM",
+      place: "Madhuvan Garden",
+    },
+    {
       functionName: "Sangeet",
       date: "19th April",
-      time: "08:00 PM",
-      place: "Madhuvan Garden, Maihar",
+      time: "8:00 PM ",
+      place: "Madhuvan Garden",
     },
     {
       functionName: "Haldi",
       date: "20th April",
-      time: "09:00 AM",
-      place: "Madhuvan Garden, Maihar",
+      time: "9:00 AM",
+      place: "Madhuvan Garden",
     },
     {
-      functionName: "Wedding",
+      functionName: "Vivah Sanskar",
       date: "20th April",
-      time: "08:00 PM",
-      place: "Madhuvan Garden, Maihar",
+      time: "8:00 PM",
+      place: "Madhuvan Garden",
     },
+    
   ];
 
   return (
     <div
       ref={containerRef}
-      className="relative w-full max-w-5xl mx-auto py-8 md:py-24 min-h-[80vh] md:min-h-screen font-serif px-4 md:px-8"
+      className="relative w-full max-w-5xl mx-auto py-24 min-h-screen font-serif"
     >
       {/* Animated SVG ZigZag Path */}
       <div className="absolute inset-x-0 top-0 bottom-0 pointer-events-none flex justify-center z-0 overflow-visible">
-        <div className="relative w-full max-w-[200px] md:max-w-md h-full">
+        <div className="relative w-full max-w-md h-full">
           <svg
             className="w-full h-full"
             preserveAspectRatio="none"
@@ -98,7 +105,7 @@ export default function Roadmap() {
               strokeWidth="3"
               strokeLinecap="round"
               fill="none"
-              style={{ pathLength: smoothProgress, willChange: "stroke-dashoffset" }}
+              style={{ pathLength: smoothProgress }}
             />
             <defs>
               <linearGradient
@@ -121,20 +128,16 @@ export default function Roadmap() {
             className="absolute z-30 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center mt-2"
             style={{
               top: bikeTop,
+              textShadow: "0px 4px 10px rgba(0,0,0,0.2)",
               left: bikeLeft,
-              willChange: "top, left",
             }}
           >
             {/* Replace /assets/bicycle.png with your own image later. For now, it's a styled container. */}
-            <div
-              className="relative w-12 h-12 md:w-20 md:h-20 backdrop-blur-sm rounded-full border border-primary shadow-lg p-1.5 md:p-2 flex items-center justify-center"
-              style={{ textShadow: "0px 4px 10px rgba(0,0,0,0.2)" }}
-            >
+            <div className="relative w-16 h-16 md:w-20 md:h-20 backdrop-blur-sm rounded-full border border-[#d4af37] shadow-lg p-2 flex items-center justify-center">
               <Image
                 src="/assets/bicycle.png"
                 alt="Couple on bicycle"
                 fill
-                sizes="(max-width: 768px) 48px, 80px"
                 className="object-contain"
               />
             </div>
@@ -143,7 +146,7 @@ export default function Roadmap() {
       </div>
 
       {/* Checkpoints */}
-      <div className="relative z-10 flex flex-col justify-between h-full py-5 md:py-10 gap-20 md:gap-40">
+      <div className="relative z-10 flex flex-col justify-between h-full py-10 gap-32 md:gap-40">
         {events.map((event, index) => {
           const isLeft = index % 2 === 0;
           return (
@@ -154,38 +157,32 @@ export default function Roadmap() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.8, y: 50 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: false, margin: "0px 0px -20% 0px" }}
+                viewport={{ once: false, margin: "0px 0px -45% 0px" }}
                 transition={{ duration: 0.6, type: "spring", bounce: 0.3 }}
-                className={`w-[65%] sm:w-[55%] md:w-[42%] bg-linear-to-br from-[#ffffff]/95 to-[#fdfbf2]/95 p-4 md:p-8 shadow-[0_8px_30px_rgba(212,175,55,0.15)] md:shadow-[0_15px_40px_rgba(212,175,55,0.2)] relative group text-center ${isLeft ? "mr-auto" : "ml-auto"
-                  }`}
+                className={`w-[85%] md:w-[45%] bg-[#fffdf9]/95 backdrop-blur-md p-6 md:p-8 shadow-2xl relative group ${
+                  isLeft
+                    ? "mr-auto text-right md:text-center"
+                    : "ml-auto text-left md:text-center"
+                }`}
                 style={{
-                  border: "1px solid rgba(212,175,55,0.4)",
-                  borderRadius: "12px",
-                  willChange: "transform, opacity"
+                  border: "1px solid #d4af37",
+                  borderRadius: "16px 2px 16px 2px",
                 }}
               >
-                {/* Decorative inner border */}
-                <div className="absolute inset-1.5 md:inset-2 border border-primary/30 rounded-lg pointer-events-none text-center" />
+                {/* Decorative border corners */}
+                <div className="absolute top-1 left-1 w-4 h-4 border-t border-l border-[#d4af37] opacity-60"></div>
+                <div className="absolute bottom-1 right-1 w-4 h-4 border-b border-r border-[#d4af37] opacity-60"></div>
 
-                {/* Decorative gold aesthetic corners */}
-                <div className="absolute top-0 left-0 w-6 md:w-8 h-6 md:h-8 border-t-2 border-l-2 border-primary opacity-80 rounded-tl-xl" />
-                <div className="absolute bottom-0 right-0 w-6 md:w-8 h-6 md:h-8 border-b-2 border-r-2 border-primary opacity-80 rounded-br-xl" />
-                <div className="absolute top-0 right-0 w-6 md:w-8 h-6 md:h-8 border-t-2 border-r-2 border-primary opacity-80 rounded-tr-xl" />
-                <div className="absolute bottom-0 left-0 w-6 md:w-8 h-6 md:h-8 border-b-2 border-l-2 border-primary opacity-80 rounded-bl-xl" />
-
-                <h3 className="text-2xl md:text-4xl lg:text-5xl font-script text-[#8b5e34] drop-shadow-sm mb-1 md:mb-3">
+                <h3 className="text-2xl md:text-4xl text-[#8b5e34] mb-3 tracking-wide">
                   {event.functionName}
                 </h3>
-
-                {/* Line separator */}
-                <div className="w-16 md:w-24 h-px bg-linear-to-r from-transparent via-primary to-transparent mx-auto mb-2 md:mb-4 opacity-80" />
-
-                <div className="text-[11px] md:text-base lg:text-lg text-[#5a5a5a] space-y-0.5 md:space-y-1 font-sans font-light">
-                  <p className="uppercase tracking-widest md:tracking-[0.15em] text-[#8b5e34] font-medium">
+                <div className="w-12 h-px bg-[#d4af37] mx-auto mb-4 opacity-50" />
+                <div className="text-sm md:text-base text-[#5a5a5a] space-y-1 font-sans font-light">
+                  <p className="uppercase tracking-[0.15em] text-[#8b5e34]">
                     {event.date}
                   </p>
-                  <p className="tracking-widest opacity-80 text-xs md:text-base">{event.time}</p>
-                  <p className="pt-2 md:pt-3 italic font-serif text-[#6b6b6b] leading-tight">
+                  <p className="tracking-widest opacity-80">{event.time}</p>
+                  <p className="pt-2 italic font-serif text-[#6b6b6b]">
                     {event.place}
                   </p>
                 </div>

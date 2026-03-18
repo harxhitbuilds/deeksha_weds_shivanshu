@@ -82,8 +82,7 @@ export default function Footer() {
           </div>
 
           <p className="max-w-xs md:max-w-3xl text-sm md:text-lg text-gray-200 mt-8 px-4 font-sans leading-relaxed tracking-wide">
-            Our families are excited that you are able to join us in celebrating
-            what we hope will be one of the happiest days of our lives.
+           Awaiting your gracious presence on this special day.
           </p>
         </div>
       </div>

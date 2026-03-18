@@ -49,13 +49,13 @@ export default function Message() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const galleryItems = [
-    { src: "/assets/two.jpeg", className: "col-span-2 row-span-2" },
-    { src: "/assets/one.jpeg", className: "col-span-1 row-span-1" },
+    { src: "/assets/four.jpeg", className: "col-span-2 row-span-2" },
+    { src: "/assets/one1.jpeg", className: "col-span-1 row-span-1" },
     { src: "/assets/three.jpeg", className: "col-span-1 row-span-2" },
-    { src: "/assets/four.jpeg", className: "col-span-1 row-span-1" },
-    { src: "/assets/five.jpeg", className: "col-span-2 row-span-1" },
-    { src: "/assets/six.jpeg", className: "col-span-1 row-span-1" },
+    { src: "/assets/replaced2.jpeg", className: "col-span-1 row-span-1" },
+    { src: "/assets/4.jpeg", className: "col-span-2 row-span-1" },
     { src: "/assets/seven.jpeg", className: "col-span-1 row-span-1" },
+    { src: "/assets/six.jpeg", className: "col-span-1 row-span-1" },
   ];
 
   return (
@@ -84,12 +84,9 @@ export default function Message() {
             </h2>
             <div className="w-32 h-px bg-primary mb-8 opacity-80"></div>
             <p className="text-sm md:text-lg lg:text-xl mb-6 md:mb-12 leading-relaxed md:leading-loose drop-shadow-md text-gray-200 font-sans tracking-wide px-2 md:px-10">
-              With hearts full of love and excitement, we ,invite you to be a
-              part of our special day as we begin our beautiful journey
-              together. Your presence will mean the world to us as we celebrate
-              love, laughter, and a lifetime of togetherness. Join us on 19 and
-              20 April at Madhuvan garden to bless us as we step into this new
-              chapter of our lives.❤️
+              With hearts full of love and excitement, we invite you to be a part of our special day as we begin our beautiful journey together. 
+              Your presence will mean the world to us as we celebrate love, laughter, and a lifetime of togetherness. 
+              Join us on April 19th and 20th at Madhuvan Garden to bless us as we step into this new chapter of our lives.
             </p>
           </motion.div>
 
