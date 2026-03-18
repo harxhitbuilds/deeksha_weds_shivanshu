@@ -84,13 +84,12 @@ export default function Message() {
             </h2>
             <div className="w-32 h-px bg-primary mb-8 opacity-80"></div>
             <p className="text-sm md:text-lg lg:text-xl mb-6 md:mb-12 leading-relaxed md:leading-loose drop-shadow-md text-gray-200 font-sans tracking-wide px-2 md:px-10">
-              We are both so delighted that you are able to join us in
-              celebrating what we hope will be one of the happiest days of our
-              lives. The affection shown to us by so many people
-              has been incredibly moving, and has touched us both deeply. We
-              would like to take this opportunity to thank everyone most
-              sincerely for their kindness. We are looking forward to see you at
-              the wedding.❤️
+              With hearts full of love and excitement, we ,invite you to be a
+              part of our special day as we begin our beautiful journey
+              together. Your presence will mean the world to us as we celebrate
+              love, laughter, and a lifetime of togetherness. Join us on 19 and
+              20 April at Madhuvan garden to bless us as we step into this new
+              chapter of our lives.❤️
             </p>
           </motion.div>
 

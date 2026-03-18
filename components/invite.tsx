@@ -37,7 +37,7 @@ export default function Invite() {
       </h2>
 
       <p className="text-xs md:text-base lg:text-lg text-white/90 max-w-[80%] mx-auto">
-        You to join us in the wedding celebrations of
+        You to join us in celebrating the wedding of our beloved daughter/son
       </p>
 
       <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif italic py-2 md:py-4 text-white leading-tight">

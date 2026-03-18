@@ -51,19 +51,19 @@ export default function Roadmap() {
     {
       functionName: "Sangeet",
       date: "19th April",
-      time: "10:00 AM",
+      time: "08:00 PM",
       place: "Madhuvan Garden, Maihar",
     },
     {
-      functionName: "Mehendi",
+      functionName: "Haldi",
       date: "20th April",
-      time: "8:00 AM",
+      time: "09:00 AM",
       place: "Madhuvan Garden, Maihar",
     },
     {
-      functionName: "Baraat & Varmala",
+      functionName: "Wedding",
       date: "20th April",
-      time: "8:00 PM",
+      time: "08:00 PM",
       place: "Madhuvan Garden, Maihar",
     },
   ];
