@@ -12,16 +12,14 @@ export default function Invite() {
           className="object-contain opacity-80 md:w-30 md:h-30"
         />
         <span className="absolute text-white text-xs md:text-base lg:text-lg whitespace-nowrap drop-shadow-md -top-6 left-1/2 transform -translate-x-1/2 font-semibold tracking-wide bg-black/20 px-3 py-1 rounded-full md:bg-transparent md:px-0 md:py-0">
-          ॐ श्री गणेशाय नम
+          ॐ श्री गणेशाय नमः
         </span>
       </div>
 
       <div className="flex flex-col items-center space-y-1">
         <p className="text-xs md:text-base lg:text-lg tracking-widest text-white/90 uppercase">
-          ॐ भूर्भुवः स्वः
-          तत्सवितुर्वरेण्यं
-          भर्गो देवस्य धीमहि
-          धियो यो नः प्रचोदयात्॥
+          वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br></br>
+          निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
         </p>
 
       </div>
@@ -37,7 +35,7 @@ export default function Invite() {
       </h2>
 
       <p className="text-xs md:text-base lg:text-lg text-white/90 max-w-[80%] mx-auto">
-        You to join us in celebrating the wedding of our beloved daughter/son
+        You to join us in celebrating the wedding of our beloved daughter
       </p>
 
       <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif italic py-2 md:py-4 text-white leading-tight">
@@ -53,7 +51,7 @@ export default function Invite() {
           Son of
         </p>
         <p className="text-sm md:text-lg lg:text-xl font-medium text-white">
-          Mrs. Sudha & Mr. Shivnarayan ,
+          Mrs. Sudha & Mr. Shiv Narayan,
         </p>
       </div>
 
