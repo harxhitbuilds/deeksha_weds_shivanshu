@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Invite() {
   return (
-    <div className="flex flex-col items-center justify-center text-center space-y-4 md:space-y-6 lg:space-y-8 text-black drop-shadow-sm px-4 w-full pt-12 md:pt-0 z-20">
+    <div className="flex flex-col items-center justify-center text-center space-y-4 md:space-y-6 lg:space-y-8 text-black drop-shadow-sm px-4 w-full pt-12 md:pt-0 z-20 md:pb-200" >
       <div className="relative mb-2 md:mb-4 flex justify-center items-center">
         <Image
           src="/assets/ganesh.png"
@@ -51,7 +51,7 @@ export default function Invite() {
           Son of
         </p>
         <p className="text-sm md:text-lg lg:text-xl font-medium text-white">
-          Mrs. Sudha & Mr. Shiv Narayan,
+          Mrs. Sudha & Mr. Shiv Narayan
         </p>
       </div>
 

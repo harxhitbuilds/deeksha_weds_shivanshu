@@ -29,6 +29,20 @@ export default function Hero() {
           priority
         />
 
+        <Image
+          src="/assets/hero-extension.png"
+          alt="hero background"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: "100%", height: "auto" }}
+          className={`object-cover transition-opacity duration-1000 flex md:hidden  ${imageLoaded ? "opacity-80" : "opacity-0"
+            }`}
+          onLoad={() => setImageLoaded(true)}
+          priority
+        />
+
+
 
         <AnimatePresence>
           {imageLoaded && (
@@ -51,7 +65,7 @@ export default function Hero() {
                     delay: 0.5,
                   }}
                   // transition={{ duration: 2, ease: "easeInOut", delay: 0.5 }}
-                  className="text-3xl md:text-5xl lg:text-6xl font-script  text-white  uppercase drop-shadow-2xl text-center px-4 mt-34  decoration-secondary/80 underline-offset-8 hidden md:flex"
+                  className="text-3xl md:text-5xl lg:text-6xl font-script  text-white  uppercase drop-shadow-2xl text-center px-4 mt-34  decoration-secondary/80 underline-offset-8 hidden md:flex font-great-vibes"
                   style={{ textShadow: "0 4px 12px rgba(0,0,0,0.5)" }}
                 >
                   Unveil the Celebration
@@ -62,11 +76,11 @@ export default function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
-                className="absolute inset-x-0 bottom-0 md:bottom-12 flex flex-col items-center justify-end space-y-8 md:space-y-12 pb-10 md:pb-100"
+                className="absolute inset-x-0 bottom-0 md:bottom-12 flex flex-col items-center justify-end space-y-8 md:space-y-12 pb-10 md:pb-100 "
               >
                 <Invite />
 
-                <div className="max-w-5xl mx-auto px-4 w-full mt-4 md:mt-10">
+                <div className="max-w-7xl mx-auto px-4 w-full mt-4 md:mt-10 lg:scale-125 md:scale-110 origin-top">
                   <Roadmap />
                 </div>
               </motion.div>

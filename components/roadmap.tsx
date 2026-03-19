@@ -72,17 +72,16 @@ export default function Roadmap() {
       time: "8:00 PM",
       place: "Madhuvan Garden",
     },
-    
   ];
 
   return (
     <div
       ref={containerRef}
-      className="relative w-full max-w-5xl mx-auto py-24 min-h-screen font-serif"
+      className="relative w-full max-w-4xl mx-auto py-10 md:py-16 lg:py-12 font-serif"
     >
       {/* Animated SVG ZigZag Path */}
       <div className="absolute inset-x-0 top-0 bottom-0 pointer-events-none flex justify-center z-0 overflow-visible">
-        <div className="relative w-full max-w-md h-full">
+        <div className="relative w-full max-w-md md:max-w-lg lg:max-w-100 h-full">
           <svg
             className="w-full h-full"
             preserveAspectRatio="none"
@@ -133,7 +132,7 @@ export default function Roadmap() {
             }}
           >
             {/* Replace /assets/bicycle.png with your own image later. For now, it's a styled container. */}
-            <div className="relative w-16 h-16 md:w-20 md:h-20 backdrop-blur-sm rounded-full border border-[#d4af37] shadow-lg p-2 flex items-center justify-center">
+            <div className="relative w-16 h-16 md:w-20 md:h-20 backdrop-blur-sm rounded-full border border-primary shadow-lg p-2 flex items-center justify-center">
               <Image
                 src="/assets/bicycle.png"
                 alt="Couple on bicycle"
@@ -146,7 +145,7 @@ export default function Roadmap() {
       </div>
 
       {/* Checkpoints */}
-      <div className="relative z-10 flex flex-col justify-between h-full py-10 gap-32 md:gap-40">
+      <div className="relative z-10 flex flex-col justify-between h-full py-5 gap-16 md:gap-24">
         {events.map((event, index) => {
           const isLeft = index % 2 === 0;
           return (
@@ -157,32 +156,34 @@ export default function Roadmap() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.8, y: 50 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: false, margin: "0px 0px -45% 0px" }}
+                viewport={{ once: false, margin: "0px 0px -25% 0px" }}
                 transition={{ duration: 0.6, type: "spring", bounce: 0.3 }}
-                className={`w-[85%] md:w-[45%] bg-[#fffdf9]/95 backdrop-blur-md p-6 md:p-8 shadow-2xl relative group ${
-                  isLeft
-                    ? "mr-auto text-right md:text-center"
-                    : "ml-auto text-left md:text-center"
-                }`}
+                className={`w-[50%] h-auto md:w-[45%] bg-[#fffdf9]/95 backdrop-blur-md p-4 md:p-6 shadow-2xl relative group ${isLeft
+                  ? "mr-auto text-left md:text-center"
+                  : "ml-auto text-right md:text-center"
+                  }`}
                 style={{
                   border: "1px solid #d4af37",
                   borderRadius: "16px 2px 16px 2px",
                 }}
               >
                 {/* Decorative border corners */}
-                <div className="absolute top-1 left-1 w-4 h-4 border-t border-l border-[#d4af37] opacity-60"></div>
-                <div className="absolute bottom-1 right-1 w-4 h-4 border-b border-r border-[#d4af37] opacity-60"></div>
+                <div className="absolute top-1 left-1 w-4 h-4 border-t border-l border-primary opacity-60"></div>
+                <div className="absolute bottom-1 right-1 w-4 h-4 border-b border-r border-primary opacity-60"></div>
 
-                <h3 className="text-2xl md:text-4xl text-[#8b5e34] mb-3 tracking-wide">
+                <h3 className="text-xl md:text-2xl lg:text-3xl text-[#8b5e34] tracking-wide">
                   {event.functionName}
                 </h3>
-                <div className="w-12 h-px bg-[#d4af37] mx-auto mb-4 opacity-50" />
-                <div className="text-sm md:text-base text-[#5a5a5a] space-y-1 font-sans font-light">
-                  <p className="uppercase tracking-[0.15em] text-[#8b5e34]">
-                    {event.date}
-                  </p>
-                  <p className="tracking-widest opacity-80">{event.time}</p>
-                  <p className="pt-2 italic font-serif text-[#6b6b6b]">
+                <div className="w-12 h-px bg-primary mx-auto md:mx-auto mb-2 opacity-50" />
+                <div className="text-xs md:text-sm lg:text-[15px] text-[#5a5a5a] space-y-1 font-sans font-light">
+                  <div className={`flex flex-col md:flex-row md:items-center ${isLeft ? "text-left md:justify-center" : "text-right md:justify-center"} gap-1 md:gap-3`}>
+                    <p className="uppercase tracking-[0.15em] text-[#8b5e34]">
+                      {event.date}
+                    </p>
+                    <span className="hidden md:inline text-primary">|</span>
+                    <p className="tracking-widest opacity-80">{event.time}</p>
+                  </div>
+                  <p className="pt-1 italic font-serif text-[#6b6b6b]">
                     {event.place}
                   </p>
                 </div>
