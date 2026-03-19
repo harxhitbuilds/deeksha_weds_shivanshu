@@ -104,7 +104,7 @@ export default function Roadmap() {
               strokeWidth="3"
               strokeLinecap="round"
               fill="none"
-              style={{ pathLength: smoothProgress }}
+              style={{ pathLength: smoothProgress, willChange: "stroke-dashoffset" }}
             />
             <defs>
               <linearGradient
@@ -129,10 +129,11 @@ export default function Roadmap() {
               top: bikeTop,
               textShadow: "0px 4px 10px rgba(0,0,0,0.2)",
               left: bikeLeft,
+              willChange: "top, left, transform",
             }}
           >
             {/* Replace /assets/bicycle.png with your own image later. For now, it's a styled container. */}
-            <div className="relative w-16 h-16 md:w-20 md:h-20 backdrop-blur-sm rounded-full border border-primary shadow-lg p-2 flex items-center justify-center">
+            <div className="relative w-16 h-16 md:w-20 md:h-20 bg-white/50 rounded-full border border-primary shadow-lg p-2 flex items-center justify-center">
               <Image
                 src="/assets/bicycle.png"
                 alt="Couple on bicycle"
@@ -158,14 +159,15 @@ export default function Roadmap() {
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: false, margin: "0px 0px -25% 0px" }}
                 transition={{ duration: 0.6, type: "spring", bounce: 0.3 }}
-                className={`w-[50%] h-auto md:w-[45%] bg-[#fffdf9]/95 backdrop-blur-md p-4 md:p-6 shadow-2xl relative group ${isLeft
-                  ? "mr-auto text-left md:text-center"
-                  : "ml-auto text-right md:text-center"
-                  }`}
                 style={{
                   border: "1px solid #d4af37",
                   borderRadius: "16px 2px 16px 2px",
+                  willChange: "transform, opacity",
                 }}
+                className={`w-[50%] h-auto md:w-[45%] bg-[#fffdf9] p-4 md:p-6 shadow-xl relative group ${isLeft
+                  ? "mr-auto text-left md:text-center"
+                  : "ml-auto text-right md:text-center"
+                  }`}
               >
                 {/* Decorative border corners */}
                 <div className="absolute top-1 left-1 w-4 h-4 border-t border-l border-primary opacity-60"></div>
